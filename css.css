@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+.me{margin: 100px 100px 0px;}
+/* Header Styles */
+header {
+    position: sticky ;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    padding: 0 5em;
+    z-index: 10;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger-menu {
+    height: 2em;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+}
+
+/* Slider Styles */
+.slider-container {
+    width: 100%;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+/* .side-box{
+    bottom: 330px;
+    background-color: #244AC2;
+    width: 1000px;
+    height: ;
+}
+.blue-box{
+        right: 0;
+        top: 48%;
+        margin-top: -60px;
+        position: absolute;
+        width: 50%;
+        background-color: #000000;
+        display: block;
+        content: "";
+        height: 120px;
+    } */
+
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 330px;
+    left: 0;
+    color: white;
+    text-align:center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 2;
+    width: 750px;
+    height: 117px;
+    background-color: #244ac2;
+
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    margin: 0 auto; /* Centers the box itself if needed */
+}
+
+.slide_message {
+    width: 456px;
+    height: 26px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    line-height: 45px;
+    align-items: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Open Sans";
+    margin: 0;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.slider-nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-nav-dot.active {
+    background-color: #fff;
+}
+
+.slider-arrows {
+    float: right;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.arrow {
+    position: sticky;
+    background-color: rgba(243, 238, 238, 0.255);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: space-between;
+    padding: 4em 0;
+}
+
+/* Grid Styles */
+.grid {
+    display: grid;
+    width: 100%;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+}
+
+.more_info_boxes {
+    background-color: #061C2C;
+    padding: 1em;
+    color: white;
+}
+
+.account-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 1em;
+}
+
+.account-var {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #244AC2;
+    color: white;
+    height: 3em;
+    margin-top: 4em;
+    padding: 0 1em;
+    font-size: 0.7em;
+}
+
+.account-var > img {
+    width: 1em;
+}
+
+/* Animations */
+.float,
+.grow,
+.darken {
+    transition: 0.2s;
+}
+
+.float:hover {
+    transform: translate(0, -5px) scale(1.05);
+}
+
+.darken:hover {
+    background-color: #061C2C;
+}
+
+.grow:hover {
+    scale: 1.1;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1080px) {
+    #about {
+        flex-direction: column;
+    }
+    
+    #about > div {
+        display: flex;
+        align-items: center;
+    }
+    
+    #about > div > img {
+        padding: 4em 0 0 0;
+        width: 18em;
+    }
+    
+    #about > div > p {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
+    }
+}
